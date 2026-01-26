@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Cygre';
+    src: url('Cygre-Light.eot');
+    src: local('Cygre Light'), local('Cygre-Light'),
+        url('Cygre-Light.eot?#iefix') format('embedded-opentype'),
+        url('Cygre-Light.woff2') format('woff2'),
+        url('Cygre-Light.woff') format('woff'),
+        url('Cygre-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('Cygre-Thin.eot');
+    src: local('Cygre Thin'), local('Cygre-Thin'),
+        url('Cygre-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Cygre-Thin.woff2') format('woff2'),
+        url('Cygre-Thin.woff') format('woff'),
+        url('Cygre-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('Cygre-Book.eot');
+    src: local('Cygre Book'), local('Cygre-Book'),
+        url('Cygre-Book.eot?#iefix') format('embedded-opentype'),
+        url('Cygre-Book.woff2') format('woff2'),
+        url('Cygre-Book.woff') format('woff'),
+        url('Cygre-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('Cygre-Regular.eot');
+    src: local('Cygre Regular'), local('Cygre-Regular'),
+        url('Cygre-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Cygre-Regular.woff2') format('woff2'),
+        url('Cygre-Regular.woff') format('woff'),
+        url('Cygre-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('Cygre-Bold.eot');
+    src: local('Cygre Bold'), local('Cygre-Bold'),
+        url('Cygre-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Cygre-Bold.woff2') format('woff2'),
+        url('Cygre-Bold.woff') format('woff'),
+        url('Cygre-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('Cygre-Medium.eot');
+    src: local('Cygre Medium'), local('Cygre-Medium'),
+        url('Cygre-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Cygre-Medium.woff2') format('woff2'),
+        url('Cygre-Medium.woff') format('woff'),
+        url('Cygre-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
