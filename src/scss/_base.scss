@@ -63,7 +63,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-    font-size: 24px;
+    font-size: 32px;
     line-height: normal;
     font-weight: 600;
 }
@@ -146,6 +146,17 @@ p {
             transform: translateX(4px);
         }
     }
+}
+
+.button--grey {
+    height: 35px;
+    padding: 0 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    border-radius: 35px;
+    background-color: var(--soft-grey);
+    font-size: 10px;
 }
 
 .subtitle {

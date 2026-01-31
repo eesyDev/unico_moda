@@ -1,0 +1,28 @@
+.new-products {
+    margin-top: 50px;
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        &-right {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+    }
+    &__controls {
+        display: flex;
+        gap: 20px;
+        .swiper-button-prev, .swiper-button-next {
+            position: static;
+            padding: 0;
+            width: 35px;
+            height: 35px;
+            background-color: transparent;
+            border: none;
+            margin-top: 0;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
