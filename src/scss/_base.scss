@@ -57,37 +57,21 @@ h6 {
 }
 
 h1, .h1 {
-    font-size: 6.5em;
+    font-size: 32px;
     line-height: normal;
+    font-weight: 600;
 }
 
 h2, .h2 {
-    font-size: 64px;
+    font-size: 32px;
     line-height: normal;
-    &.imaged {
-        .row {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 26px;
-        }
-    }
-    &.h2-block {
-        display: flex;
-        flex-direction: column;
-    }
-    &-small {
-        font-size: 24px;
-    }
-    &.h2-sm {
-        font-size: 48px;
-        line-height: normal;
-    }
+    font-weight: 600;
 }
 
 h3, .h3 {
-    font-size: 32px;
+    font-size: 22px;
     line-height: normal;
+    font-weight: 600;
 }
 
 h4, .h4 {
@@ -135,6 +119,48 @@ p {
     .w-1_3 {
         width: calc(33.33% - ((var(--gap) * 2) / 3));
     }
+}
+.button--link {
+    text-decoration: underline;
+    font-weight: 700;
+    // display: inline-flex;
+    position: relative;
+    // &::after {
+    //     content: '';
+    //     width: 100%;
+    //     height: 1px;
+    //     position: absolute;
+    //     background-color: #fff;
+    // }
+    &.white {
+        color: #fff;
+    }
+    .icon {
+        transition: transform .2s ease-in-out;
+        transform: translateX(0px);
+        font-style: normal;
+        display: inline-block;
+    }
+    &:hover {
+        .icon {
+            transform: translateX(4px);
+        }
+    }
+}
+
+.button--grey {
+    height: 35px;
+    padding: 0 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    border-radius: 35px;
+    background-color: var(--soft-grey);
+    font-size: 10px;
+}
+
+.subtitle {
+    font-weight: 400;
 }
 
 @media screen and (max-width: 1350px) {
