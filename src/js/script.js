@@ -1,26 +1,31 @@
 const parentSwiperEl = document.querySelector('.new-products__slider');
+const collectionSwiperEl = document.querySelector('.collection-products__slider');
+const promoSwiperEl = document.querySelector('.promo__slider');
 
-// Находим все карточки товаров
 const productItems = document.querySelectorAll('.product-item');
 
-productItems.forEach(item => {
-    const swiperEl = item.querySelector('.product-item__images-slider');
-    const btnNext = item.querySelector('.inner-next');
-    const btnPrev = item.querySelector('.inner-prev');
+try {
+    productItems.forEach(item => {
+        const swiperEl = item.querySelector('.product-item__images-slider');
+        const btnNext = item.querySelector('.inner-next');
+        const btnPrev = item.querySelector('.inner-prev');
 
-    if (swiperEl && btnNext && btnPrev) {
-        // При клике на кастомную кнопку - просим Swiper переключить слайд
-        btnNext.addEventListener('click', (e) => {
-            e.preventDefault(); // Чтобы не сработала ссылка на товар
-            swiperEl.swiper.slideNext();
-        });
+        if (swiperEl && btnNext && btnPrev) {
+            // При клике на кастомную кнопку - просим Swiper переключить слайд
+            btnNext.addEventListener('click', (e) => {
+                e.preventDefault(); // Чтобы не сработала ссылка на товар
+                swiperEl.swiper.slideNext();
+            });
 
-        btnPrev.addEventListener('click', (e) => {
-            e.preventDefault();
-            swiperEl.swiper.slidePrev();
-        });
-    }
-});
+            btnPrev.addEventListener('click', (e) => {
+                e.preventDefault();
+                swiperEl.swiper.slidePrev();
+            });
+        }
+    });
+} catch(err) {
+    console.log(err)
+}
 
 if (parentSwiperEl) {
     const swiperParams = {
@@ -48,4 +53,60 @@ if (parentSwiperEl) {
 
     Object.assign(parentSwiperEl, swiperParams);
     parentSwiperEl.initialize();
+}
+
+if (collectionSwiperEl) {
+    const swiperCollectionParams = {
+        init: false, 
+        navigation: {
+            nextEl: '.collection__controls .next-btn',
+            prevEl: '.collection__controls .prev-btn',
+        },
+        slidesPerView: 4,
+        spaceBetween: 20,
+        injectStyles: [
+          `
+          :host .swiper-button-next,
+          :host .swiper-button-prev {
+            display: none;
+          }
+          `,
+        ],
+        breakpoints: {
+            320: { slidesPerView: 1.2 },
+            768: { slidesPerView: 2.5 },
+            1024: { slidesPerView: 4 }
+        }
+    };
+
+    Object.assign(collectionSwiperEl, swiperCollectionParams);
+    collectionSwiperEl.initialize();
+}
+
+if (promoSwiperEl) {
+    const swiperPromoParams = {
+        init: false, 
+        navigation: {
+            nextEl: '.promo__controls .next-btn',
+            prevEl: '.promo__controls .prev-btn',
+        },
+        slidesPerView: 4,
+        spaceBetween: 20,
+        injectStyles: [
+          `
+          :host .swiper-button-next,
+          :host .swiper-button-prev {
+            display: none;
+          }
+          `,
+        ],
+        breakpoints: {
+            320: { slidesPerView: 1.2 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+        }
+    };
+
+    Object.assign(promoSwiperEl, swiperPromoParams);
+    promoSwiperEl.initialize();
 }

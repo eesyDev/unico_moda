@@ -1,0 +1,40 @@
+.promo {
+    margin-top: 50px;
+    &__wrapper {
+        display: flex;
+    }
+    &__heading {
+        width: 331px;
+        padding-right: 20px;
+    }
+    &__slider {
+        width: calc(100% - 331px);
+    }
+    .promo__wrapper {
+        display: flex;
+    }
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .button--black {
+            margin-top: 50px;
+        }
+    }
+    &__controls {
+        display: flex;
+        gap: 20px;
+        .swiper-button-prev, .swiper-button-next {
+            position: static;
+            padding: 0;
+            width: 35px;
+            height: 35px;
+            background-color: transparent;
+            border: none;
+            margin-top: 0;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

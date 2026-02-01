@@ -51,4 +51,30 @@
             border: 1px solid var(--black);
         }
     }
+    &__image {
+        position: relative;
+        .label {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            z-index: 2;
+        }
+    }
+    .favorite {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 2;
+        .favorite-f {
+            display: none;
+        }
+        &.added {
+            .favorite-f {
+                display: block;
+            }
+            .favorite-o {
+                display: none;
+            }
+        }
+    }
 }
