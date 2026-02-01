@@ -120,6 +120,9 @@ p {
         width: calc(33.33% - ((var(--gap) * 2) / 3));
     }
 }
+.custom-br {
+    display: block;
+}
 .button--link {
     text-decoration: underline;
     font-weight: 700;
