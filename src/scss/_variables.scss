@@ -2,7 +2,41 @@
     --black: #212121;
     --red: #FF1F1F;
     --acid-green: #CCFF00;
+    --white: #ffffff;
+    --softest-grey: #FCFCFC;
+    --super-soft-grey : #F7F7F7;
     --soft-grey: #F2F2F2;
-    --medium-grey: #8E8E8E;
-    --grey: #7E7E7E;
+    --soft-more-grey: #D8D8D8;
+    --grey: #B9B9B9;
+    --dark-grey: #9B9B9B;
+    --darkest-grey: #8E8E8E;
+}
+
+@mixin h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+@mixin banner-h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+@mixin banner-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.25;
+}
+@mixin item-name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+@mixin regular-txt {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.25;
+}
+@mixin small-txt {
+    font-size: 9px;
+    font-weight: 400;
 }

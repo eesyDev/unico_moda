@@ -1,0 +1,106 @@
+.breadcrumbs {
+    color: var(--dark-grey);
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--soft-more-grey);
+    &__link {
+        text-decoration: underline;
+        &:hover {
+            color: var(--black);
+        }
+    }
+}
+
+.products-filter {
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border-bottom: 0.5px solid var(--soft-more-grey);
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    &__link {
+        position: relative;
+        &::after {
+            content: '⭭';
+            position: absolute;
+            right: -10px;
+        }
+        &:hover {
+            color: var(--dark-grey);
+        }
+    }
+}
+
+.pagination {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    &__more {
+        color: var(--black);
+        text-decoration: underline;
+        font-weight: 500;
+        font-size: 16px;
+        font-weight: 500;
+        &:hover {
+            color: var(--dark-grey);
+        }
+    }
+    &__quantity {
+        font-size: 14px;
+        color: var(--dark-grey);
+    }
+}
+
+.features {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 25px 100px;
+        text-align: center;
+        width: calc(33.33% - 10px);
+        background: var(--super-soft-grey);
+        &:nth-child(2) {
+            background: var(--soft-grey);
+        }
+    }
+    &__icon {
+        img {
+            width: 35px;
+        }
+    }
+    &__title {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    &__txt {
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
+
+.extra-items {
+    margin-top: 80px;
+    .h2 {
+        text-align: center;
+    }
+}

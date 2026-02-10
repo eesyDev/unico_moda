@@ -110,3 +110,29 @@ if (promoSwiperEl) {
     Object.assign(promoSwiperEl, swiperPromoParams);
     promoSwiperEl.initialize();
 }
+
+if (window.innerWidth < 992) {
+    const gallery = document.querySelector('.woocommerce-product-gallery__wrapper');
+    gallery.classList.add('swiper-wrapper');
+
+    document.querySelectorAll('.woocommerce-product-gallery__image')
+        .forEach(el => el.classList.add('swiper-slide'));
+
+    new Swiper('.woocommerce-product-gallery', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+    });
+}
+
+document.querySelectorAll('.product-page__faq-head').forEach(head => {
+    head.addEventListener('click', () => {
+        const item = head.parentElement;
+        // закрываем остальные
+        document.querySelectorAll('.product-page__faq-item')
+        .forEach(el => {
+            if (el !== item) el.classList.remove('is-open');
+        });
+        // переключаем текущий
+        item.classList.toggle('is-open');
+    });
+});
