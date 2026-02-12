@@ -2,13 +2,11 @@
 <html lang="ru">
     @@include('utilities/head.html')
     @@include('components/header.html')
-
-    <section class="catalog">
+    <section class="favorites-page">
         <div class="container">
             <div class="h1-block">
-                <h1 class="h1">Новинки</h1>
+                <h1 class="h1">Избранное</h1>
                 @@include('components/breadcrumbs.html')
-                @@include('components/filter.html')
             </div>
             <div class="catalog__items">
                 @@include('components/item.html')
@@ -16,18 +14,11 @@
                 @@include('components/item.html')
                 @@include('components/item.html')
                 @@include('components/item.html')
-                @@include('components/item.html')
-                @@include('components/item.html')
-                @@include('components/item.html')
-                @@include('components/item.html')
-                @@include('components/item.html')
-                @@include('components/item.html')
             </div>
-            @@include('components/pagination.html')
             @@include('components/features.html')
         </div>
     </section>
-    
+
     @@include('components/footer.html')
     @@include('utilities/scripts.html')
 </body>

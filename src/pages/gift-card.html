@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('utilities/head.html')
+    @@include('components/header.html')
+
+    <section class="gift-card-page">
+        <div class="container">
+            <div class="h1-block">
+                <h1 class="h1">Подарочные карты</h1>
+                @@include('components/breadcrumbs.html')
+            </div>
+            <div class="gift-card">
+                <div class="gift-card__image">
+                    <img src="/assets/img/iphone-mockup.png" alt="Gift Card">
+                </div>
+                <div class="gift-card__content">
+                    <h2 class="gift-card__title">Цифровая подарочная карта</h2>
+                    <!-- Price -->
+                    <div class="gift-card__field">
+                        <label>Введите свою цену* <span>(от 1000 ₽)</span></label>
+                        <input type="text" placeholder="10 000 ₽">
+                    </div>
+                    <!-- Presets -->
+                    <div class="gift-card__presets">
+                        <button class="preset-btn">5 000 ₽</button>
+                        <button class="preset-btn">10 000 ₽</button>
+                        <button class="preset-btn">20 000 ₽</button>
+                        <button class="preset-btn">50 000 ₽</button>
+                    </div>
+                    <!-- Quantity -->
+                    <div class="gift-card__field">
+                        <label>Количество*</label>
+                        <input class="type-number" type="number" value="1">
+                    </div>
+                    <!-- CTA -->
+                    <div class="gift-card__actions">
+                        <button class="button--black big">В корзину</button>
+                        <p class="gift-card__note">
+                            Цифровая подарочная карта после покупки будет отправлена
+                            на указанный адрес электронной почты в течение нескольких минут
+                        </p>
+                    </div>
+                    <!-- INFO BLOCK -->
+                    <section class="gift-card-info">
+                        <h2>Полезно знать:</h2>
+                        <ul>
+                            <li>Подарочные карты можно использовать на сайте unicomoda.ru</li>
+                            <li>Подарочная карта действительна в течение 1 года с даты выдачи</li>
+                            <li>Подарочные карты можно использовать частично или полностью</li>
+                            <li class="important">
+                            Подарочные карты возврату не подлежат и не могут быть обменяны
+                            на наличные деньги или любую другую оплату
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('components/footer.html')
+    @@include('utilities/scripts.html')
+</body>
+</html>

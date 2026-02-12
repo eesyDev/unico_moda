@@ -1,0 +1,98 @@
+.size-guide {
+    .size-how {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        align-items: center;
+        gap: 50px;
+        margin-top: 25px;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            width: 80%;
+        }
+        &__title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+        &__intro {
+            font-weight: 300;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .size-accordion {
+        &__item {
+            border-bottom: 1px solid var(--soft-more-grey);
+        }
+        &__head {
+            padding: 15px 0;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            &:after {
+                content: "+";
+                position: absolute;
+                right: 0;
+                font-weight: 300;
+            }
+        }
+        &__body {
+            transform-origin: top;
+            transform: scaleY(0);
+            overflow: hidden;
+            transition: .3s;
+            font-size: 14px;
+            font-weight: 300;
+            padding-bottom: 0;
+            height: 0;
+        }
+        &__item.is-open {
+            .size-accordion__body {
+                height: auto;
+                transform: scaleY(1);
+                padding-bottom: 15px;
+            }
+            .size-accordion__head:after {
+                content: "–";
+            }
+        }
+    }
+    .size-section {
+        margin-top: 50px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: .5fr 1fr;
+        &__title {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+    }
+    .size-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 40px;
+        &__col {
+            h4 {
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 14px;
+                margin-bottom: 10px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .size-how {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .size-table {
+        gap: 25px;
+    }
+}
