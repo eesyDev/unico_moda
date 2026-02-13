@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('utilities/head.html')
+    @@include('components/header.html')
+    <section class="brand-page">
+        <div class="container">
+            <div class="h1-block">
+                <div class="brand-page__h1-row">
+                    <h1 class="h1">Essentiel Antwerp</h1>
+                    <span></span>
+                    <p class="brand-page__brand-txt">
+                        Essentiel Antwerp - это освежающая, необычная и роскошная мода, известная своими графическими или цветочными принтами и модными сочетаниями цветов. Богатые и уникальные коллекции созданы для того, чтобы вызывать эмоциональный отклик. 
+                        Essentiel Antwerp - это ода игре. Это торжество изысканной эксцентричности. Это исследование пропорций, принта и цвета.
+                        Бренд был основан в 1999 году Эсфаном Эгтессади и Инге Онси, сначала была выпущена коллекция футболок, через год открылся первый магазин бренда. Далее появились трикотажные изделия, платья, рубашки, юбки, джинсы и тд. Essentiel Antwerpen превратился в глобальный бренд с мощным посланием, который приносит в ваш образ краски и необычные принты.
+                    </p>
+                </div>
+                @@include('components/breadcrumbs.html')
+                @@include('components/filter.html')
+            </div>
+            <div class="catalog__items">
+                @@include('components/item.html')
+                @@include('components/item.html')
+            </div>
+            @@include('components/pagination.html')
+            @@include('components/features.html')
+        </div>
+    </section>
+
+    @@include('components/footer.html')
+    @@include('utilities/scripts.html')
+</body>
+</html>

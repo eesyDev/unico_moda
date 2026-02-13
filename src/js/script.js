@@ -110,3 +110,76 @@ if (promoSwiperEl) {
     Object.assign(promoSwiperEl, swiperPromoParams);
     promoSwiperEl.initialize();
 }
+
+if (window.innerWidth < 992) {
+    const gallery = document.querySelector('.woocommerce-product-gallery__wrapper');
+    gallery.classList.add('swiper-wrapper');
+
+    document.querySelectorAll('.woocommerce-product-gallery__image')
+        .forEach(el => el.classList.add('swiper-slide'));
+
+    new Swiper('.woocommerce-product-gallery', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+    });
+}
+
+// Аккордеон FAQ
+// document.querySelectorAll('.product-page__faq-head').forEach(head => {
+//     head.addEventListener('click', () => {
+//         const item = head.parentElement;
+//         // закрываем остальные
+//         document.querySelectorAll('.product-page__faq-item')
+//         .forEach(el => {
+//             if (el !== item) el.classList.remove('is-open');
+//         });
+//         // переключаем текущий
+//         item.classList.toggle('is-open');
+//     });
+// });
+
+document.addEventListener('click', function (e) {
+
+  const head = e.target.closest(
+    '.product-page__faq-head, .size-accordion__head'
+  );
+
+  if (!head) return;
+
+  const item = head.parentElement;
+
+  const container = head.closest(
+    '.product-page__faq, .size-accordion'
+  );
+
+  // закрываем остальные внутри конкретного блока
+  container.querySelectorAll(
+    '.product-page__faq-item, .size-accordion__item'
+  ).forEach(el => {
+    if (el !== item) el.classList.remove('is-open');
+  });
+
+  // переключаем текущий
+  item.classList.toggle('is-open');
+
+});
+
+
+// Аккордеон FAQ
+
+// Табы с адресами магазинов
+const items = document.querySelectorAll('.maps-contact-item');
+const mapFrame = document.getElementById('map-frame');
+
+items.forEach(item => {
+    item.addEventListener('click', () => {
+        // убрать активный у всех
+        items.forEach(el => el.classList.remove('is-active'));
+        // добавить текущему
+        item.classList.add('is-active');
+        // поменять карту
+        const newMap = item.dataset.map;
+        mapFrame.src = newMap;
+    });
+});
+// Табы с адресами магазинов

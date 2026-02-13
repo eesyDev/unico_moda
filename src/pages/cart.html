@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('utilities/head.html')
+    @@include('components/header.html')
+    <section class="cart-page">
+        <div class="container">
+            <div class="h1-block">
+                <h1 class="h1">Корзина</h1>
+                @@include('components/breadcrumbs.html')
+            </div>
+            <div class="cart-page__wrapper">
+            <!-- LEFT -->
+            <div class="cart-page__items">
+                @@include('components/cart-item.html')
+                @@include('components/cart-item.html')
+                @@include('components/cart-item.html')
+                @@include('components/cart-item.html')
+                @@include('components/cart-item.html')
+                @@include('components/cart-item.html')
+                @@include('components/cart-item.html')
+            </div>
+
+            <!-- RIGHT -->
+            <div class="cart-page__summary">
+                <div class="cart-summary">
+                    <h2 class="cart-summary__title">Итоговая сумма</h2>
+                    <div class="cart-summary__row">
+                        <span>Предварительная сумма:</span>
+                        <span>126 700 ₽</span>
+                    </div>
+                    <div class="cart-summary__row">
+                        <span>Доставка</span>
+                        <span>500 ₽</span>
+                    </div>
+                    <div class="cart-summary__promo">
+                        <label>Промокод / Подарочная карта</label>
+                        <input type="text" placeholder="XVBS4GQH">
+                    </div>
+                    <div class="cart-summary__low">
+                        <div class="cart-summary__total">
+                            <span>Итого:</span>
+                            <span>127 200 ₽</span>
+                        </div>
+                        <button class="button--black big">
+                            Оплатить
+                        </button>
+                    </div>
+                </div>
+                <a href="#" class="button--link">
+                    Продолжить покупки →
+                </a>
+            </div>
+            </div>
+            @@include('components/features.html')
+        </div>
+    </section>
+
+    @@include('components/footer.html')
+    @@include('utilities/scripts.html')
+</body>
+</html>

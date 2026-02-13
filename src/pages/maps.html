@@ -1,0 +1,59 @@
+<html lang="ru">
+    @@include('utilities/head.html')
+    @@include('components/header.html')
+
+    <section class="maps">
+        <div class="container">
+            <div class="h1-block">
+                <h1 class="h1">Адреса наших магазинов в Санкт-Петербурге</h1>
+                @@include('components/breadcrumbs.html')
+            </div>
+            <div class="maps-contacts">
+                <!-- LEFT -->
+                <div class="maps-contacts__info">
+                    <div class="maps-contact-item is-active" data-map="https://www.openstreetmap.org/export/embed.html?bbox=30.32,59.93,30.33,59.94">
+                        <h3 class="maps-contact-item__title">Центральный район, Итальянская ул., 15</h3>
+                        <p class="maps-contact-item__text">Галерея бутикoв "Гранд Палас", вход с Итальянской улицы, правый лифт, 3 этаж</p>
+                        <div class="maps-contact-item__schedule">
+                            <span>График работы:</span>
+                            <span>
+                                <p>Ежедневно</p>
+                                <p>11:00 - 21:00</p>
+                            </span>
+                        </div>
+                        <p class="maps-contact-item__phone">Телефон: <a href="tel:+79218898529">+7 921 889 8529</a></p>
+                    </div>
+                    <div class="maps-contact-item" data-map="https://www.openstreetmap.org/export/embed.html?bbox=30.25,60.01,30.26,60.02">
+                        <h3 class="maps-contact-item__title">Санкт-Петербург, Комендантский пр., 9, к2</h3>
+                        <p class="maps-contact-item__text">ТК "Модный Променад", 1 этаж</p>
+                        <div class="maps-contact-item__schedule">
+                            <span>График работы:</span>
+                            <span>
+                                <p>Ежедневно</p>
+                                <p>10:00 - 22:00</p>
+                            </span>
+                        </div>
+                        <p class="maps-contact-item__phone">Телефон: <a href="tel:+79218898529">+7 921 889 8529</a></p>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="maps-contacts__map">
+                    <iframe id="map-frame"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=30.32,59.93,30.33,59.94"
+                        frameborder="0">
+                    </iframe>
+                    <!-- <div style="position:relative;overflow:hidden;">
+                        <a href="https://yandex.kz/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a>
+                        <a href="https://yandex.kz/maps/2/saint-petersburg/house/italyanskaya_ulitsa_15/Z0kYdQRjT0ACQFtjfXVyd35iYQ==/?ll=30.338309%2C59.935470&utm_medium=mapframe&utm_source=maps&z=14.04" style="color:#eee;font-size:12px;position:absolute;top:14px;">Итальянская улица, 15 — Яндекс Карты</a>
+                        <iframe src="https://yandex.kz/map-widget/v1/?ll=30.338309%2C59.935470&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQwNjQzMhJS0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0JjRgtCw0LvRjNGP0L3RgdC60LDRjyDRg9C70LjRhtCwLCAxNSIKDVKr8kEVr75vQg%2C%2C&z=14.04" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('components/footer.html')
+    @@include('utilities/scripts.html')
+</body>
+</html>

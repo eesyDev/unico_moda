@@ -1,0 +1,67 @@
+.brands {
+    .products-filter {
+        &__left {
+            gap: 25px;
+        }
+        &__link {
+            &::after {
+                content: none;
+            }
+        }
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px 100px;
+        margin-top: 50px;
+    }
+    &-group {
+        &__letter {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--grey);
+            padding-bottom: 15px;
+            position: relative;
+            border-bottom: 0.5px solid var(--soft-more-grey);
+        }
+        &__list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            li {
+                margin-bottom: 10px;
+            }
+            a {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--black);
+                &:hover {
+                    color: var(--dark-grey);
+                }
+            }
+        }
+    }
+}
+
+.brand-page {
+    &__h1-row {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        margin-top: 50px;
+        .h1 {
+            margin-top: 0;
+        }
+        span {
+            width: 1px;
+            height: 45px;
+            background: var(--soft-more-grey);
+        }
+    }
+    &__brand-txt {
+        font-size: 12px;
+        font-weight: 400;
+        width: 70%;
+    }
+}
