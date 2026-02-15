@@ -112,16 +112,16 @@ if (promoSwiperEl) {
 }
 
 if (window.innerWidth < 992) {
-    const gallery = document.querySelector('.woocommerce-product-gallery__wrapper');
-    gallery.classList.add('swiper-wrapper');
+    // const gallery = document.querySelector('.woocommerce-product-gallery__wrapper');
+    // gallery.classList.add('swiper-wrapper');
 
-    document.querySelectorAll('.woocommerce-product-gallery__image')
-        .forEach(el => el.classList.add('swiper-slide'));
+    // document.querySelectorAll('.woocommerce-product-gallery__image')
+    //     .forEach(el => el.classList.add('swiper-slide'));
 
-    new Swiper('.woocommerce-product-gallery', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-    });
+    // new Swiper('.woocommerce-product-gallery', {
+    //     slidesPerView: 1,
+    //     spaceBetween: 10,
+    // });
 }
 
 // Аккордеон FAQ
@@ -166,6 +166,74 @@ document.addEventListener('click', function (e) {
 
 
 // Аккордеон FAQ
+
+// Поиск в хедере
+const searchToggle = document.querySelector('.header-search__toggle');
+const searchClose = document.querySelector('.header-search__close');
+const searchForm = document.querySelector('.header-search__form');
+const searchInput = document.querySelector('.header-search__input');
+const headerMain = document.querySelector('.header__main');
+
+if (searchToggle && headerMain) {
+    searchToggle.addEventListener('click', () => {
+        headerMain.classList.add('is-search-open');
+        searchInput.focus();
+    });
+
+    searchClose.addEventListener('click', () => {
+        headerMain.classList.remove('is-search-open');
+        searchInput.value = '';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchToggle.contains(e.target) && !searchForm.contains(e.target)) {
+            headerMain.classList.remove('is-search-open');
+        }
+    });
+}
+
+// Мобильное бургер-меню
+const burger = document.querySelector('.header__burger');
+const mobileNav = document.querySelector('.header__mobile-nav');
+const mobileOverlay = document.querySelector('.header__mobile-overlay');
+const mobileClose = document.querySelector('.header__mobile-close');
+const header = document.querySelector('.header');
+const catalogToggle = document.querySelector('.header__mobile-catalog-toggle');
+const catalogItem = document.querySelector('.header__mobile-menu-item--catalog');
+
+function openMobileMenu() {
+    header.classList.add('is-menu-open');
+    document.body.classList.add('is-menu-open');
+}
+
+function closeMobileMenu() {
+    header.classList.remove('is-menu-open');
+    document.body.classList.remove('is-menu-open');
+}
+
+if (burger) {
+    burger.addEventListener('click', () => {
+        if (header.classList.contains('is-menu-open')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+}
+
+if (mobileClose) {
+    mobileClose.addEventListener('click', closeMobileMenu);
+}
+
+if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+}
+
+if (catalogToggle && catalogItem) {
+    catalogToggle.addEventListener('click', () => {
+        catalogItem.classList.toggle('is-open');
+    });
+}
 
 // Табы с адресами магазинов
 const items = document.querySelectorAll('.maps-contact-item');

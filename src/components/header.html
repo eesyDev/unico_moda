@@ -15,8 +15,8 @@
                                 <a href="" class="link--hover-grey">Каталог</a>
                                 <div class="mega-menu">
                                     <div class="mega-menu__overlay" aria-hidden="true"></div>
-                                    <div class="container">
-                                        <div class="mega-menu__content">
+                                    <div class="">
+                                        <div class="mega-menu__content container">
                                             <div class="mega-menu__column">
                                                 <div class="mega-menu__title">Одежда</div>
                                                 <ul class="mega-menu__list">
@@ -69,13 +69,73 @@
                         Женская одежда. Онлайн-бутик <span class="custom-br"></span> итальянских брендов. СПб
                     </div>
                     <div class="header__actions">
-                        <a href=""><img src="/assets/img/search.svg" alt="search"></a>
+                        <div class="header-search">
+                            <button class="header-search__toggle" type="button" aria-label="Поиск">
+                                <img src="/assets/img/search.svg" alt="search">
+                            </button>
+                        </div>
                         <a href=""><img src="/assets/img/user.svg" alt="user"></a>
                         <a href=""><img src="/assets/img/heart.svg" alt="like"></a>
                         <a href=""><img src="/assets/img/bag.svg" alt="cart"></a>
+                        <button class="header__burger" type="button" aria-label="Меню">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <!-- Mobile nav -->
+            <!-- <div class="header__mobile-overlay"></div> -->
+            <nav class="header__mobile-nav">
+                <button class="header__mobile-close" type="button" aria-label="Закрыть">&times;</button>
+                <ul class="header__mobile-menu">
+                    <li><a href="">Новинки</a></li>
+                    <li class="header__mobile-menu-item--catalog">
+                        <button class="header__mobile-catalog-toggle" type="button">
+                            Каталог
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </button>
+                        <div class="header__mobile-submenu">
+                            <div class="header__mobile-submenu-group">
+                                <div class="header__mobile-submenu-title">Одежда</div>
+                                <ul>
+                                    <li><a href="">Пальто и плащи</a></li>
+                                    <li><a href="">Куртки</a></li>
+                                    <li><a href="">Свитеры</a></li>
+                                    <li><a href="">Джемперы и кардиганы</a></li>
+                                    <li><a href="">Футболки</a></li>
+                                    <li><a href="">Платья</a></li>
+                                    <li><a href="">Брюки</a></li>
+                                    <li><a href="">Юбки</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__mobile-submenu-group">
+                                <div class="header__mobile-submenu-title">Аксессуары</div>
+                                <ul>
+                                    <li><a href="">Шарфы</a></li>
+                                    <li><a href="">Шапки</a></li>
+                                    <li><a href="">Перчатки</a></li>
+                                    <li><a href="">Носки</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">Бренды</a></li>
+                    <li><a href="" class="sale-color">Скидки</a></li>
+                    <li><a href="">Подбор</a></li>
+                </ul>
+            </nav>
         </div>
+        <form class="header-search__form" action="/" method="get" role="search">
+            <div class="container header-search__form-inner">
+                <input class="header-search__input" type="search" name="s" placeholder="Поиск по каталогу..." autocomplete="off">
+                <button class="header-search__submit" type="submit" aria-label="Найти">
+                    <img src="/assets/img/search.svg" alt="search">
+                </button>
+                <button class="header-search__close" type="button" aria-label="Закрыть">&#10005;</button>
+            </div>
+        </form>
     </div>
 </header>

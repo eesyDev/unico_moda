@@ -81,3 +81,26 @@
         color: var(--grey);
     }
 }
+
+@media screen and (max-width: 991px) {
+    .footer {
+        &__wrapper {
+            flex-wrap: wrap;
+            row-gap: 48px;
+        }
+        &__logo {
+            order: 1;
+        }
+        &__contacts {
+            order: 2;
+        }
+        &__col {
+            &:nth-child(2) {
+                order: 3;
+            }
+            &:nth-child(3) {
+                order: 4;
+            }
+        }
+    }
+}

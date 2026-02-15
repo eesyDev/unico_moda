@@ -43,3 +43,12 @@
         object-fit: cover;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .footer-banner {
+        &__part {
+           height: 400px;
+           padding: 60px 30px;
+        }
+    }
+}

@@ -81,3 +81,13 @@
         object-fit: cover;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .grid-banner__bottom-left, .grid-banner__bottom-right {
+        height: 400px;
+        padding: 60px 40px;
+    }
+    .grid-banner__top {
+        height: 400px;
+    }
+}
