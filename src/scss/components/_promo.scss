@@ -38,3 +38,14 @@
         }
     }
 }
+
+@media screen and (max-width: 991px) {
+    .promo {
+        &__heading {
+            width: 240px;
+        }
+        &__slider {
+            width: calc(100% - 240px);
+        }
+    }
+}
