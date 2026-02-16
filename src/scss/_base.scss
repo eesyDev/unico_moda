@@ -59,6 +59,10 @@ img, svg, video  {
     max-height: 100%;
 }
 
+input, select, textarea {
+    font-family: 'Stolzl';
+}
+
 h1,
 h2,
 h3,
@@ -77,6 +81,7 @@ h1, .h1 {
     line-height: normal;
     font-weight: 700;
     margin-top: 25px;
+    text-align: center;
 }
 
 h2, .h2 {
@@ -110,7 +115,7 @@ h5, .h5 {
 
 p {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0;
     .paragraph {
         font-weight: 500;

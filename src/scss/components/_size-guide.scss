@@ -25,6 +25,24 @@
     .size-accordion {
         &__item {
             border-bottom: 1px solid var(--soft-more-grey);
+            &.is-open {
+                .size-accordion__head {
+                    color: var(--dark-grey);
+                }
+                .size-accordion__body {
+                    height: auto;
+                    transform: scaleY(1);
+                    padding-bottom: 15px;
+                }
+                .size-accordion__head:after {
+                    content: "–";
+                }
+            }
+            &:hover {
+                .size-accordion__head {
+                    color: var(--darkest-grey);
+                }
+            }
         }
         &__head {
             padding: 15px 0;
@@ -48,43 +66,46 @@
             padding-bottom: 0;
             height: 0;
         }
-        &__item.is-open {
-            .size-accordion__body {
-                height: auto;
-                transform: scaleY(1);
-                padding-bottom: 15px;
-            }
-            .size-accordion__head:after {
-                content: "–";
-            }
-        }
     }
     .size-section {
         margin-top: 50px;
         display: grid;
         align-items: center;
         grid-template-columns: .5fr 1fr;
+        gap: 50px;
         &__title {
-            font-size: 28px;
-            margin-bottom: 40px;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .size-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            width: 80%;
+            &__col {
+                &:nth-child(odd) {
+                    background: var(--super-soft-grey);
+                }
+                h4 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 12px;
+                    height: 33px;
+                }
+                p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 12px;
+                    height: 33px;
+                }
+            }
         }
     }
-    .size-table {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 40px;
-        &__col {
-            h4 {
-                font-weight: 500;
-                margin-bottom: 15px;
-            }
-            p {
-                font-size: 14px;
-                margin-bottom: 10px;
-                font-weight: 300;
-            }
-        }
-    }
+    
 }
 
 @media (max-width: 991px) {

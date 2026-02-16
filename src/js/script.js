@@ -139,30 +139,39 @@ if (window.innerWidth < 992) {
 // });
 
 document.addEventListener('click', function (e) {
+    const head = e.target.closest(
+        '.product-page__faq-head, .size-accordion__head'
+    );
 
-  const head = e.target.closest(
-    '.product-page__faq-head, .size-accordion__head'
-  );
+    if (!head) return;
 
-  if (!head) return;
-
-  const item = head.parentElement;
-
-  const container = head.closest(
-    '.product-page__faq, .size-accordion'
-  );
-
-  // закрываем остальные внутри конкретного блока
-  container.querySelectorAll(
-    '.product-page__faq-item, .size-accordion__item'
-  ).forEach(el => {
-    if (el !== item) el.classList.remove('is-open');
-  });
-
-  // переключаем текущий
-  item.classList.toggle('is-open');
-
+    const item = head.parentElement;
+    const container = head.closest(
+        '.product-page__faq, .size-accordion'
+    );
+    // закрываем остальные внутри конкретного блока
+    container.querySelectorAll(
+        '.product-page__faq-item, .size-accordion__item'
+    ).forEach(el => {
+        if (el !== item) el.classList.remove('is-open');
+    });
+    // переключаем текущий
+    item.classList.toggle('is-open');
 });
+
+
+document.querySelectorAll('.faq-head').forEach(head => {
+    head.addEventListener('click', () => {
+        const item = head.parentElement;
+
+        document.querySelectorAll('.faq-item')
+        .forEach(el => {
+            if (el !== item) el.classList.remove('is-open');
+        });
+        item.classList.toggle('is-open');
+    });
+});
+
 
 
 // Аккордеон FAQ
