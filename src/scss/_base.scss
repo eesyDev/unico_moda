@@ -262,7 +262,7 @@ input {
     }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1280px) {
     body {
         font-size: 14px;
     }
@@ -280,11 +280,35 @@ input {
         padding-left: 36px;
         padding-right: 36px;
     }
+    .h2 {
+        font-size: 28px;
+    }
+    .h3 {
+        font-size: 20px;
+    }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .container {
         padding-left: 24px;
         padding-right: 24px;
+    }
+    .h2 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .h2 {
+        font-size: 20px;
+    }
+    .h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .h3 {
+        font-size: 16px;
     }
 }

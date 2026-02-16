@@ -21,6 +21,7 @@
         gap: 25px;
         font-size: 14px;
         font-weight: 500;
+        width: fit-content;
         > li {
             position: static;
         }
@@ -410,6 +411,25 @@ body.is-menu-open {
     }
 }
 
+@media screen and (max-width: 1280px) {
+    .header {
+        &__menu {
+            gap: 20px;
+            font-size: 12px;
+        }
+        &__middle {
+            width: 130px;
+        }
+        &__right {
+            width: calc(50% - 55px);
+        }
+        &__actions {
+            gap: 15px;
+        }
+    }
+}
+
+
 // =====================
 // Mobile styles (≤991px)
 // =====================
@@ -419,24 +439,19 @@ body.is-menu-open {
             padding: 4px 0;
             font-size: 10px;
         }
-
         &__main-wrapper {
             padding: 14px 0;
         }
-
         &__left {
             display: none;
         }
-
         &__note {
             display: none;
         }
-
         &__middle {
             width: auto;
             flex-shrink: 0;
         }
-
         &__right {
             width: auto;
             border-left: none;
@@ -444,20 +459,16 @@ body.is-menu-open {
             padding-left: 0;
             gap: 16px;
         }
-
         &__actions {
-            gap: 16px;
-
-            img {
-                width: 20px;
-                height: 20px;
-            }
+            gap: 20px;
         }
-
         &__burger {
             display: block;
+            padding: 0;
+            width: fit-content;
+            height: fit-content;
+            margin-left: 10px;
         }
-
         &__mobile-nav,
         &__mobile-overlay {
             display: block;
@@ -484,6 +495,40 @@ body.is-menu-open {
         &__input {
             padding: 10px 12px;
             font-size: 13px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        &__middle {
+            width: 120px;
+        }
+        &__actions {
+            gap: 15px;
+            img {
+                width: 20px;
+            }
+        }
+        &__pre {
+            font-size: 9px;
+        }
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .header {
+        &__middle {
+            width: 110px;
+        }
+        &__actions {
+            gap: 10px;
+            img {
+                width: 20px;
+            }
+        }
+        &__burger {
+            margin-left: 0;
         }
     }
 }

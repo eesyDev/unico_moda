@@ -33,17 +33,50 @@
         color: #fff;
         .h2 {
             margin-bottom: 30px;
-
+            margin-top: 5px;
+            text-align: left;
         }
     }
 
+}
+
+@media screen and (max-width: 1280px) {
+    .hero {
+        &__wrapper {
+            padding: 100px 100px;
+        }
+    }
 }
 
 @media screen and (max-width: 991px) {
     .hero {
         &__wrapper {
             height: 400px;
-            padding: 40px 70px;
+            padding: 70px 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero {
+        &__wrapper {
+            padding: 50px 50px;
+        }
+        &__sub {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        &__wrapper {
+            padding: 25px;
+        }
+        &__info {
+            .h2 {
+                margin-bottom: 25px;
+            }
         }
     }
 }

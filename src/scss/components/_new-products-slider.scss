@@ -3,11 +3,13 @@
     &__heading {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         &-right {
             display: flex;
             gap: 50px;
             align-items: center;
         }
+
     }
     &__controls {
         display: flex;
@@ -27,5 +29,29 @@
     }
     &-products__slider, &__slider {
         margin-top: 30px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .new-products, .collection {
+        &__controls {
+            display: none;
+        }
+    }
+    .collection__heading, .new-products__heading {
+        .h2 {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .collection__heading, .new-products__heading {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .collection__heading .h2, .new-products__heading .h2 {
+        width: 40%;
     }
 }

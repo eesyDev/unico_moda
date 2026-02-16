@@ -46,8 +46,12 @@ if (parentSwiperEl) {
         ],
         breakpoints: {
             320: { slidesPerView: 1.2 },
-            768: { slidesPerView: 2.5 },
-            1024: { slidesPerView: 4 }
+            370: { slidesPerView: 1.7 },
+            480: { slidesPerView: 2.1 },
+            640: { slidesPerView: 2.3 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 3.5 },
+            1280: { slidesPerView: 4 }
         }
     };
 
@@ -74,8 +78,12 @@ if (collectionSwiperEl) {
         ],
         breakpoints: {
             320: { slidesPerView: 1.2 },
-            768: { slidesPerView: 2.5 },
-            1024: { slidesPerView: 4 }
+            370: { slidesPerView: 1.7 },
+            480: { slidesPerView: 2.1 },
+            640: { slidesPerView: 2.3 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 3.5 },
+            1280: { slidesPerView: 4 }
         }
     };
 
@@ -102,8 +110,12 @@ if (promoSwiperEl) {
         ],
         breakpoints: {
             320: { slidesPerView: 1.2 },
+            370: { slidesPerView: 1.7 },
+            480: { slidesPerView: 2.1 },
+            640: { slidesPerView: 2.3 },
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
+            1024: { slidesPerView: 2.5 },
+            1280: { slidesPerView: 3 }
         }
     };
 
