@@ -133,6 +133,9 @@
                 color: var(--darkest-grey);
             }
             &.is-open {
+                .product-page__faq-head {
+                    color: var(--dark-grey);
+                }
                 .product-page__faq-content {
                     max-height: 500px;
                     opacity: 1;

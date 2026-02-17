@@ -59,6 +59,10 @@ img, svg, video  {
     max-height: 100%;
 }
 
+input, select, textarea {
+    font-family: 'Stolzl';
+}
+
 h1,
 h2,
 h3,
@@ -77,6 +81,7 @@ h1, .h1 {
     line-height: normal;
     font-weight: 700;
     margin-top: 25px;
+    text-align: center;
 }
 
 h2, .h2 {
@@ -110,7 +115,7 @@ h5, .h5 {
 
 p {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0;
     .paragraph {
         font-weight: 500;
@@ -257,7 +262,7 @@ input {
     }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1280px) {
     body {
         font-size: 14px;
     }
@@ -275,11 +280,35 @@ input {
         padding-left: 36px;
         padding-right: 36px;
     }
+    .h2 {
+        font-size: 28px;
+    }
+    .h3 {
+        font-size: 20px;
+    }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .container {
         padding-left: 24px;
         padding-right: 24px;
+    }
+    .h2 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .h2 {
+        font-size: 20px;
+    }
+    .h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .h3 {
+        font-size: 16px;
     }
 }
