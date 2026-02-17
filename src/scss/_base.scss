@@ -27,6 +27,14 @@ button {
     }
 }
 
+.buttons-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 ul {
     padding: 0;
     margin: 0;
@@ -253,6 +261,25 @@ input {
 }
 .sale-color {
     color: var(--red);
+}
+
+input {
+    height: 40px;
+    border: 1px solid #F7F7F7;
+    background-color: #F7F7F7;
+    padding: 10px;
+}
+
+.input-group {
+    display: flex; 
+    flex-direction: column;
+    gap: 5px;
+    width: 354px;
+    margin: 0 auto;
+    label {
+        font-size: 12px;
+        font-weight: 500;
+    }
 }
 
 @media screen and (max-width: 1350px) {

@@ -316,47 +316,63 @@
         display: flex;
     }
 
-    &__form {
-        position: absolute;
-        left: 0;
+    &__overlay {
+        position: fixed;
+        top: 0;
         right: 0;
-        top: 100%;
-        z-index: 99998;
-        background-color: #F7F7F7;
-        padding: 16px 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-8px);
-        transition: opacity 250ms ease, transform 250ms ease, visibility 250ms ease;
+        bottom: 0;
+        width: 480px;
+        max-width: 100vw;
+        z-index: 100000;
+        background-color: #fff;
+        padding-top: 60px;
+        overflow-y: auto;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
         .is-search-open & {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+            transform: translateX(0);
         }
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        color: var(--black);
+    }
+
+    &__form {
+        width: 100%;
     }
 
     &__form-inner {
         display: flex;
         align-items: center;
         gap: 8px;
+        // border-bottom: 1px solid var(--black);
+        padding-bottom: 10px;
     }
 
     &__input {
         width: 100%;
         border: none;
         outline: none;
-        padding: 12px 16px;
-        font-size: 14px;
+        font-size: 16px;
         font-family: inherit;
-        background-color: #fff;
-        border-radius: 4px;
+        // background-color: transparent;
+        color: var(--black);
+
+        &::placeholder {
+            color: #999;
+        }
     }
 
     &__submit {
         background: none;
         border: none;
-        padding: 12px;
+        padding: 4px;
         cursor: pointer;
         display: flex;
         flex-shrink: 0;
@@ -370,11 +386,17 @@
     &__close {
         background: none;
         border: none;
-        padding: 12px;
+        padding: 4px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 18px;
         flex-shrink: 0;
         line-height: 1;
+        color: var(--black);
+        transition: opacity 200ms ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 }
 
@@ -488,13 +510,12 @@ body.is-menu-open {
     }
 
     .header-search {
-        &__form {
-            padding: 10px 0;
+        &__overlay {
+            padding-top: 40px;
         }
 
         &__input {
-            padding: 10px 12px;
-            font-size: 13px;
+            font-size: 14px;
         }
     }
 }
