@@ -126,14 +126,19 @@
                 </ul>
             </nav>
         </div>
-        <form class="header-search__form" action="/" method="get" role="search">
-            <div class="container header-search__form-inner">
-                <input class="header-search__input" type="search" name="s" placeholder="Поиск по каталогу..." autocomplete="off">
-                <button class="header-search__submit" type="submit" aria-label="Найти">
-                    <img src="/assets/img/search.svg" alt="search">
-                </button>
-                <button class="header-search__close" type="button" aria-label="Закрыть">&#10005;</button>
+        <div class="header-search__overlay">
+            <div class="container">
+                <div class="header-search__title">Что вы ищите?</div>
+                <form class="header-search__form" action="/" method="get" role="search">
+                    <div class="header-search__form-inner">
+                        <button class="header-search__submit" type="submit" aria-label="Найти">
+                            <img src="/assets/img/search.svg" alt="search">
+                        </button>
+                        <input class="header-search__input" type="search" name="s" placeholder="" autocomplete="off">
+                        <button class="header-search__close" type="button" aria-label="Закрыть">&#10005;</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </header>

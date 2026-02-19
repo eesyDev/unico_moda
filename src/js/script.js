@@ -161,13 +161,11 @@ document.addEventListener('click', function (e) {
     const container = head.closest(
         '.product-page__faq, .size-accordion'
     );
-    // закрываем остальные внутри конкретного блока
     container.querySelectorAll(
         '.product-page__faq-item, .size-accordion__item'
     ).forEach(el => {
         if (el !== item) el.classList.remove('is-open');
     });
-    // переключаем текущий
     item.classList.toggle('is-open');
 });
 
@@ -191,25 +189,21 @@ document.querySelectorAll('.faq-head').forEach(head => {
 // Поиск в хедере
 const searchToggle = document.querySelector('.header-search__toggle');
 const searchClose = document.querySelector('.header-search__close');
-const searchForm = document.querySelector('.header-search__form');
+const searchOverlay = document.querySelector('.header-search__overlay');
 const searchInput = document.querySelector('.header-search__input');
 const headerMain = document.querySelector('.header__main');
 
 if (searchToggle && headerMain) {
     searchToggle.addEventListener('click', () => {
         headerMain.classList.add('is-search-open');
-        searchInput.focus();
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => searchInput.focus(), 400);
     });
 
     searchClose.addEventListener('click', () => {
         headerMain.classList.remove('is-search-open');
+        document.body.style.overflow = '';
         searchInput.value = '';
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!searchToggle.contains(e.target) && !searchForm.contains(e.target)) {
-            headerMain.classList.remove('is-search-open');
-        }
     });
 }
 
@@ -254,6 +248,62 @@ if (catalogToggle && catalogItem) {
     catalogToggle.addEventListener('click', () => {
         catalogItem.classList.toggle('is-open');
     });
+}
+
+// Popups (dialogs)
+const dialogs = document.querySelector('.dialogs');
+const closeBg = document.querySelector('.close-bg');
+const closeBtn = dialogs.querySelector('.close-popup');
+const closeModal = dialogs.querySelector('.close');
+
+function openPopup(id) {
+    const popup = document.getElementById(id);
+    if (!dialogs || !popup) return;
+    dialogs.style.display = 'block';
+    popup.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    popup.offsetHeight; // reflow for animation
+    dialogs.style.opacity = '1';
+    popup.classList.add('active');
+}
+
+function closePopup() {
+    if (!dialogs) return;
+    const activePopup = dialogs.querySelector('.popup.active');
+    if (activePopup) {
+        activePopup.classList.remove('active');
+        dialogs.style.opacity = '0';
+        setTimeout(() => {
+            activePopup.style.display = 'none';
+            dialogs.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+}
+
+if (dialogs) {
+    dialogs.addEventListener('click', (e) => {
+        if (e.target.closest('.close') || e.target.closest('.close-popup')) {
+            closePopup();
+        }
+    });
+    if (closeBg) {
+        closeBg.addEventListener('click', closePopup);
+    }
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePopup);
+    }
+    if (closeModal) {
+        closeModal.addEventListener('click', closePopup);
+    }
+}
+
+// Gift popup — показываем 1 раз при первом посещении
+if (!localStorage.getItem('giftPopupShown')) {
+    setTimeout(() => {
+        openPopup('gift');
+        localStorage.setItem('giftPopupShown', 'true');
+    }, 5000);
 }
 
 // Табы с адресами магазинов
