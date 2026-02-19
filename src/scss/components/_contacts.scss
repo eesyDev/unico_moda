@@ -2,13 +2,11 @@
     &-layout {
         display: grid;
         grid-template-columns: 0.5fr 1fr;
-        gap: 100px;
+        gap: 50px;
         margin-top: 25px;
     }
     &-info {
         &__title {
-            font-size: 32px;
-            font-weight: 700;
             margin-bottom: 50px;
         }
         &__phone,
@@ -32,8 +30,6 @@
     }
     &-form {
         &__title {
-            font-size: 32px;
-            font-weight: 700;
             margin-bottom: 10px;
         }
         &__subtitle {
@@ -89,16 +85,46 @@
     }
 }
 
-@media (max-width: 991px) {
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 60px;
+@media screen and (max-width: 1280px) {
+    .contacts {
+        &-info {
+            &__email, &__phone {
+                font-size: 28px;
+            }
+        }
     }
-    .form-grid {
-        grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 991px) {
+    .contacts {
+        &-layout {
+            grid-template-columns: 1fr;
+        }
+        &-info__title {
+            margin-bottom: 25px;
+        }
     }
+    
     .form-group--full {
         grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contacts {
+        &-form .form-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contacts {
+        &-info {
+            &__email, &__phone {
+                font-size: 24px;
+            }
+        }
     }
 }
 
@@ -107,5 +133,13 @@
         margin-top: 25px;
         font-weight: 300;
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .policies {
+        .h1 {
+            font-size: 24px;
+        }
     }
 }

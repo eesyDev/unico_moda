@@ -35,7 +35,7 @@ if (parentSwiperEl) {
             prevEl: '.new-products__heading .prev-btn',
         },
         slidesPerView: 4,
-        spaceBetween: 20,
+        // spaceBetween: 20,
         injectStyles: [
           `
           :host .swiper-button-next,
@@ -45,13 +45,12 @@ if (parentSwiperEl) {
           `,
         ],
         breakpoints: {
-            320: { slidesPerView: 1.2 },
-            370: { slidesPerView: 1.7 },
-            480: { slidesPerView: 2.1 },
-            640: { slidesPerView: 2.3 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3.5 },
-            1280: { slidesPerView: 4 }
+            320: { slidesPerView: 1.8, spaceBetween: 10 },
+            480: { slidesPerView: 2.1, spaceBetween: 10 },
+            640: { slidesPerView: 2.7, spaceBetween: 10 },
+            768: { slidesPerView: 3.2, spaceBetween: 10 },
+            1024: { slidesPerView: 4, spaceBetween: 10 },
+            1280: { spaceBetween: 20 }
         }
     };
 
@@ -77,13 +76,12 @@ if (collectionSwiperEl) {
           `,
         ],
         breakpoints: {
-            320: { slidesPerView: 1.2 },
-            370: { slidesPerView: 1.7 },
-            480: { slidesPerView: 2.1 },
-            640: { slidesPerView: 2.3 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3.5 },
-            1280: { slidesPerView: 4 }
+            320: { slidesPerView: 1.8, spaceBetween: 10 },
+            480: { slidesPerView: 2.1, spaceBetween: 10 },
+            640: { slidesPerView: 2.7, spaceBetween: 10 },
+            768: { slidesPerView: 3.2, spaceBetween: 10 },
+            1024: { slidesPerView: 4, spaceBetween: 10 },
+            1280: { spaceBetween: 20 }
         }
     };
 
@@ -98,7 +96,7 @@ if (promoSwiperEl) {
             nextEl: '.promo__controls .next-btn',
             prevEl: '.promo__controls .prev-btn',
         },
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 20,
         injectStyles: [
           `
@@ -109,13 +107,12 @@ if (promoSwiperEl) {
           `,
         ],
         breakpoints: {
-            320: { slidesPerView: 1.2 },
-            370: { slidesPerView: 1.7 },
-            480: { slidesPerView: 2.1 },
-            640: { slidesPerView: 2.3 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 2.5 },
-            1280: { slidesPerView: 3 }
+            320: { slidesPerView: 1.8, spaceBetween: 10 },
+            480: { slidesPerView: 2.1, spaceBetween: 10 },
+            640: { slidesPerView: 2.7, spaceBetween: 10 },
+            768: { slidesPerView: 2.2, spaceBetween: 10 },
+            1024: { slidesPerView: 3, spaceBetween: 10 },
+            1280: { spaceBetween: 20 }
         }
     };
 
@@ -137,19 +134,6 @@ if (window.innerWidth < 992) {
 }
 
 // Аккордеон FAQ
-// document.querySelectorAll('.product-page__faq-head').forEach(head => {
-//     head.addEventListener('click', () => {
-//         const item = head.parentElement;
-//         // закрываем остальные
-//         document.querySelectorAll('.product-page__faq-item')
-//         .forEach(el => {
-//             if (el !== item) el.classList.remove('is-open');
-//         });
-//         // переключаем текущий
-//         item.classList.toggle('is-open');
-//     });
-// });
-
 document.addEventListener('click', function (e) {
     const head = e.target.closest(
         '.product-page__faq-head, .size-accordion__head'
@@ -181,9 +165,6 @@ document.querySelectorAll('.faq-head').forEach(head => {
         item.classList.toggle('is-open');
     });
 });
-
-
-
 // Аккордеон FAQ
 
 // Поиск в хедере

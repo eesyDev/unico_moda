@@ -33,13 +33,27 @@
     }
     &__link {
         position: relative;
+        &.mobile {
+            display: none;
+        }
         &::after {
-            content: '⭭';
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-image: url('/assets/img/filter-arrow-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
             position: absolute;
-            right: -10px;
+            right: -15px;
+            top: 2px;
+            transition: all .2s ease-in-out;
         }
         &:hover {
             color: var(--dark-grey);
+            &::after {
+                opacity: .6;
+            }
         }
     }
 }
@@ -102,5 +116,94 @@
     margin-top: 80px;
     .h2 {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .features {
+        gap: 10px;
+        &__item {
+            padding: 25px 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .features {
+        margin-top: 25px;
+    }
+    .features__item {
+        padding: 15px 25px;
+        gap: 10px;
+    }
+    .features__icon {
+        width: 28px;
+    }
+    .products-filter {
+        &__link {
+            display: none;
+            &.mobile {
+                display: block;
+            }
+            &::after {
+                top: 1px;
+            }
+        }
+        &.brands-filter {
+            overflow-x: auto;
+            overflow-y: hidden;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            
+            .products-filter__link {
+                display: block;
+                white-space: nowrap;
+                flex: 0 0 auto;
+            }
+        }
+    }
+    .pagination {
+        margin-top: 25px;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .features {
+        flex-wrap: wrap;
+        &__item {
+            width: calc(50% - 5px);
+            &:last-child {
+                width: 100%;
+                background: var(--soft-grey);
+            }
+            &:nth-child(2) {
+                background: var(--super-soft-grey);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .features {
+        &__item {
+            padding: 15px;
+        }
+        &__title {
+            font-size: 11px;
+        }
+        &__txt {
+            font-size: 11px;
+        }
+    }
+    .pagination {
+        gap: 5px;
+        &__more {
+            font-size: 14px;
+        }
+        &__quantity {
+            font-size: 12px;
+        }
     }
 }

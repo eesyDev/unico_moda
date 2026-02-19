@@ -1,7 +1,7 @@
 .about-us {
     &__wrapper {
         display: grid;
-        grid-template-columns: 420px 1fr;
+        grid-template-columns: 0.7fr 1.3fr;
         gap: 25px;
         align-items: start;
         margin-top: 25px;
@@ -30,15 +30,30 @@
     }
 }
 
-@media (max-width: 991px) {
-    .about-intro__wrapper {
-        grid-template-columns: 1fr;
-        gap: 40px;
+@media screen and (max-width: 1280px) {
+    .about-us {
+        &__right {
+            width: 100%;
+        }
     }
-    .about-intro__left {
-        padding-right: 0;
-        &:after {
-            display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .about-us {
+        &__wrapper {
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin-bottom: 50px;
+        }
+        &__left {
+            p {
+                font-size: 14px;
+            }
+        }
+        &__right {
+            padding-left: 0;
+            padding-top: 15px;
+            border-left: none;
         }
     }
 }

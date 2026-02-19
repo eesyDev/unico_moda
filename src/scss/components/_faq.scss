@@ -88,9 +88,15 @@
     }
 }
 
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
     .faq-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .faq-block {
+        width: 100%;
     }
 }

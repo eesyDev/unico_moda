@@ -72,10 +72,23 @@
     }
 }
 
-@media (max-width: 991px) {
+@media screen and (max-width: 1280px) {
+    .maps-contacts {
+        gap: 25px;
+        &__info {
+            padding-right: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
     .maps-contacts {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
+        &__info {
+            padding-right: 0;
+            border-right: none;
+        }
         &__map {
             height: 400px;
         }

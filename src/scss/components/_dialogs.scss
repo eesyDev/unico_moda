@@ -178,3 +178,42 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .dialogs {
+        .popup__wrapper {
+            width: 510px;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .dialogs {
+        .popup__wrapper {
+            width: 450px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dialogs {
+        .popup__wrapper {
+            width: 360px;
+            .input-group {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .dialogs {
+        .popup__wrapper {
+            width: 300px;
+        }
+        .buttons-row {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}

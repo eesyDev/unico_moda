@@ -8,6 +8,7 @@
         &__title {
             margin-top: 10px;
             text-align: left;
+            font-size: 28px;
         }
         &__text {
             margin-top: 20px;
@@ -72,6 +73,58 @@
                 background: #111;
                 color: #fff;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .article-page {
+        .article-hero {
+            margin-top: 10px;
+        }
+        .article-hero__left {
+            padding-right: 10%;
+        }
+        .article-hero__title {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .article-page {
+        .article-hero {
+            grid-template-columns: 1fr;
+            gap: 25px;
+            &__left {
+                padding-right: 0;
+            }
+        }
+        .product-tags {
+            flex-wrap: wrap;
+            .product-tag {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .article-page {
+        .article-hero__text {
+            padding-right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .article-page {
+        .article-gallery {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .article-hero__title {
+            font-size: 24px;
         }
     }
 }

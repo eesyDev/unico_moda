@@ -25,10 +25,13 @@
             &::after {
                 display: none;
             }
+            &:hover {
+                opacity: .75;
+            }
         }
     }
     &-products__slider, &__slider {
-        margin-top: 30px;
+        margin-top: 25px;
     }
 }
 @media screen and (max-width: 640px) {
