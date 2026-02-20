@@ -1,16 +1,20 @@
 .maps {
     &-contacts {
-        display: grid;
-        grid-template-columns: 0.7fr 1.3fr;
+        display: flex;
         gap: 50px;
         align-items: center;
         margin-top: 25px;
+        height: 500px;
+        #yandex-map {
+            width: 60%; height: 100%;
+        }
     }
     &-contact-item {
         display: flex;
         flex-direction: column;
         cursor: pointer;
         transition: .3s;
+        padding: 15px;
         &:not(.is-active) {
             opacity: .4;
         }
@@ -19,6 +23,7 @@
         }
         &.is-active {
             opacity: 1;
+            border-left: 3px solid var(--grey);
         }
         &__title {
             font-size: 18px;
@@ -57,6 +62,7 @@
     &-contacts__info {
         display: flex;
         flex-direction: column;
+        width: 40%;
         gap: 50px;
         padding-right: 50px;
         border-right: 0.5px solid var(--soft-more-grey);
@@ -83,14 +89,17 @@
 
 @media screen and (max-width: 991px) {
     .maps-contacts {
-        grid-template-columns: 1fr;
-        gap: 50px;
+        flex-direction: column;
+        height: auto;
         &__info {
+            width: 100%;
             padding-right: 0;
             border-right: none;
+            gap: 25px;
         }
-        &__map {
+        #yandex-map {
             height: 400px;
+            width: 100%;
         }
     }
 }

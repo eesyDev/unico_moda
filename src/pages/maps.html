@@ -9,9 +9,8 @@
                 @@include('components/breadcrumbs.html')
             </div>
             <div class="maps-contacts">
-                <!-- LEFT -->
                 <div class="maps-contacts__info">
-                    <div class="maps-contact-item is-active" data-map="https://www.openstreetmap.org/export/embed.html?bbox=30.32,59.93,30.33,59.94">
+                    <div class="maps-contact-item is-active" onclick="moveToPoint(0, this)">
                         <h3 class="maps-contact-item__title">Центральный район, Итальянская ул., 15</h3>
                         <p class="maps-contact-item__text">Галерея бутикoв "Гранд Палас", вход с Итальянской улицы, правый лифт, 3 этаж</p>
                         <div class="maps-contact-item__schedule">
@@ -23,7 +22,8 @@
                         </div>
                         <p class="maps-contact-item__phone">Телефон: <a href="tel:+79218898529">+7 921 889 8529</a></p>
                     </div>
-                    <div class="maps-contact-item" data-map="https://www.openstreetmap.org/export/embed.html?bbox=30.25,60.01,30.26,60.02">
+
+                    <div class="maps-contact-item" onclick="moveToPoint(1, this)">
                         <h3 class="maps-contact-item__title">Санкт-Петербург, Комендантский пр., 9, к2</h3>
                         <p class="maps-contact-item__text">ТК "Модный Променад", 1 этаж</p>
                         <div class="maps-contact-item__schedule">
@@ -36,21 +36,57 @@
                         <p class="maps-contact-item__phone">Телефон: <a href="tel:+79218898529">+7 921 889 8529</a></p>
                     </div>
                 </div>
-
-                <!-- RIGHT -->
-                <div class="maps-contacts__map">
-                    <div style="position:relative;overflow:hidden;">
-                        <a href="https://yandex.kz/maps/org/unico_moda/87650949153/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Unico Moda</a>
-                        <a href="https://yandex.kz/maps/2/saint-petersburg/category/clothing_store/184107943/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Магазин одежды в Санкт‑Петербурге</a>
-                        <iframe src="https://yandex.kz/map-widget/v1/?indoorLevel=1&ll=30.333484%2C59.935858&mode=search&oid=87650949153&ol=biz&z=16.85" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
-                    </div>
-                    <!-- <div style="position:relative;overflow:hidden;">
-                        <a href="https://yandex.kz/maps/org/unico_moda/177648625965/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Unico Moda</a><a href="https://yandex.kz/maps/2/saint-petersburg/category/clothing_store/184107943/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Магазин одежды в Санкт‑Петербурге</a>
-                        <a href="https://yandex.kz/maps/2/saint-petersburg/category/bags_and_suitcases_store/184107955/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Магазин сумок и чемоданов в Санкт‑Петербурге</a>
-                        <iframe src="https://yandex.kz/map-widget/v1/?ll=30.263138%2C60.004554&mode=search&oid=177648625965&ol=biz&z=15.97" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
-                    </div> -->
-                </div>
+                <div id="yandex-map"></div>
             </div>
+            <!-- ВСТАВИТЬ СВОЙ КЛЮЧ КАРТ -->
+            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=ВАШ_API_КЛЮЧ" type="text/javascript"></script>
+
+            <script>
+                let myMap;
+                let placemarks = [];
+                
+                const locations = [
+                    { coords: [59.936305, 30.333701], title: "Unico Moda: Итальянская 15" },
+                    { coords: [60.004239, 30.263426], title: "Unico Moda: Комендантский 9" }
+                ];
+                ymaps.ready(init);
+
+                function init() {
+                    myMap = new ymaps.Map("yandex-map", {
+                        center: locations[0].coords,
+                        zoom: 15,
+                        controls: ['zoomControl', 'fullscreenControl']
+                    });
+
+                    // Создаем и добавляем метки
+                    locations.forEach((loc, index) => {
+                        let pm = new ymaps.Placemark(loc.coords, {
+                            balloonContent: loc.title
+                        }, {
+                            preset: 'islands#yellowDotIcon' // Желтый цвет в стиле Яндекса
+                        });
+                        
+                        placemarks.push(pm);
+                        myMap.geoObjects.add(pm);
+                    });
+                }
+                function moveToPoint(index, element) {
+                    const target = locations[index];
+                    
+                    // 1. Плавный перелет
+                    myMap.panTo(target.coords, {
+                        flying: true,
+                        duration: 1000
+                    }).then(() => {
+                        // 2. Открываем балун (облачко) после прилета
+                        placemarks[index].balloon.open();
+                    });
+
+                    // 3. Красим активный таб
+                    document.querySelectorAll('.maps-contact-item').forEach(item => item.classList.remove('is-active'));
+                    element.classList.add('is-active');
+                }
+            </script>
         </div>
     </section>
 

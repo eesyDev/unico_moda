@@ -288,18 +288,18 @@ if (!localStorage.getItem('giftPopupShown')) {
 }
 
 // Табы с адресами магазинов
-const items = document.querySelectorAll('.maps-contact-item');
-const mapFrame = document.getElementById('map-frame');
+// const items = document.querySelectorAll('.maps-contact-item');
+// const mapFrame = document.getElementById('map-frame');
 
-items.forEach(item => {
-    item.addEventListener('click', () => {
-        // убрать активный у всех
-        items.forEach(el => el.classList.remove('is-active'));
-        // добавить текущему
-        item.classList.add('is-active');
-        // поменять карту
-        const newMap = item.dataset.map;
-        mapFrame.src = newMap;
-    });
-});
+// items.forEach(item => {
+//     item.addEventListener('click', () => {
+//         // убрать активный у всех
+//         items.forEach(el => el.classList.remove('is-active'));
+//         // добавить текущему
+//         item.classList.add('is-active');
+//         // поменять карту
+//         const newMap = item.dataset.map;
+//         mapFrame.src = newMap;
+//     });
+// });
 // Табы с адресами магазинов
